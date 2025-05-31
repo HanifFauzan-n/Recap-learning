@@ -58,4 +58,38 @@ public class Sorting {
 
     }
 
+    // Merge sort
+
+    public void mergeSort(int[] arr){
+        if(arr.length <= 1) return;
+
+        int mid = arr.length / 2;
+        int[] left = Arrays.copyOfRange(arr, 0, mid);
+        int[] right = Arrays.copyOfRange(arr, mid, arr.length);
+
+        System.out.println("A : " + Arrays.toString(arr));
+        mergeSort(left);
+        mergeSort(right);
+        merge(arr, left, right);
+        
+    }
+
+    public void merge(int[] arr, int[] left, int[] right){
+        int i = 0, j = 0, k = 0;
+
+        while(i < left.length && j < right.length){
+            arr[k++] = (left[i] < right[j]) ? left[i++] :right[j++];
+            System.out.println("k : " + Arrays.toString(arr));
+        }
+        while(i < left.length) {
+            arr[k++] = left[i++];
+            System.out.println("i : " +Arrays.toString(arr));
+        } 
+
+        while(j < right.length){
+            arr[k++] = right[j++];
+            System.out.println("j : " + Arrays.toString(arr));
+        }
+    }
+
 }
