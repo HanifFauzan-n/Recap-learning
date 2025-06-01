@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Sorting {
 
     // Bubble sort
-    public void sortingFunction(int[] arr) {
+    public void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 System.out.println(Arrays.toString(arr));
@@ -129,4 +129,9 @@ public class Sorting {
         return i + 1;
     }
 
+    // Arrays java function
+    public void sorting(int[] arr){
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 }
