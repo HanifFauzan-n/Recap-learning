@@ -60,8 +60,9 @@ public class Sorting {
 
     // Merge sort
 
-    public void mergeSort(int[] arr){
-        if(arr.length <= 1) return;
+    public void mergeSort(int[] arr) {
+        if (arr.length <= 1)
+            return;
 
         int mid = arr.length / 2;
         int[] left = Arrays.copyOfRange(arr, 0, mid);
@@ -71,25 +72,61 @@ public class Sorting {
         mergeSort(left);
         mergeSort(right);
         merge(arr, left, right);
-        
+
     }
 
-    public void merge(int[] arr, int[] left, int[] right){
+    public void merge(int[] arr, int[] left, int[] right) {
         int i = 0, j = 0, k = 0;
 
-        while(i < left.length && j < right.length){
-            arr[k++] = (left[i] < right[j]) ? left[i++] :right[j++];
+        while (i < left.length && j < right.length) {
+            arr[k++] = (left[i] < right[j]) ? left[i++] : right[j++];
             System.out.println("k : " + Arrays.toString(arr));
         }
-        while(i < left.length) {
+        while (i < left.length) {
             arr[k++] = left[i++];
-            System.out.println("i : " +Arrays.toString(arr));
-        } 
+            System.out.println("i : " + Arrays.toString(arr));
+        }
 
-        while(j < right.length){
+        while (j < right.length) {
             arr[k++] = right[j++];
             System.out.println("j : " + Arrays.toString(arr));
         }
+    }
+
+    // Quick Sort
+    public void quickSort(int[] arr, int low, int high) {
+        System.out.println("Q : " + Arrays.toString(arr));
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+
+    }
+
+    public int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+
+        System.out.println("P : " + Arrays.toString(arr));
+        for (int j = low; j < high; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                int tamp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tamp;
+                System.out.println("i = " + i + ",[i] = " + arr[i]);
+                System.out.println("j = " + j + ",[j] = " + arr[j]);
+                System.out.println("[in if]' : " + Arrays.toString(arr));
+            }
+        }
+        int tamp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = tamp;
+        System.out.println("i = " + (i+1) + ",[i] = " + arr[i + 1]);
+        System.out.println("high = " + high + ",[high] = " + arr[high]);
+        System.out.println("[in else] : " + Arrays.toString(arr));
+        return i + 1;
     }
 
 }
