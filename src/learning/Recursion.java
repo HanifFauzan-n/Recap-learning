@@ -9,5 +9,11 @@ public class Recursion {
         return n * recursionFactorial(n - 1);
     }
 
+    public int recursionFibonacci(int n){
+        if (n < 1) {
+            return n;
+        }
+        return  recursionFibonacci(n - 1) + recursionFibonacci(n - 2);
+    }
     
 }
