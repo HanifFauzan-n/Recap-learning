@@ -21,5 +21,16 @@ public class Recursion {
 
         return recursionReverse(data.substring(1)) + data.charAt(0);
     }
+
+    public int recursionSumDigit(int n) {
+        if(n == 0) return 0;
+        System.out.println(n);
+        return (n % 10) + recursionSumDigit(n / 10);
+    }
+
+    public int recursionPower(int a, int n){
+        if(n == 0) return 1;
+        return a * recursionPower(a, n - 1);
+    }
     
 }

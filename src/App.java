@@ -21,5 +21,8 @@ public class App {
         System.out.println(hasil);
         String output = recursion.recursionReverse("Fauzan");
         System.out.println(output);
+        int n = recursion.recursionPower(2,4);
+        System.out.println(n);
+
     }
 }
