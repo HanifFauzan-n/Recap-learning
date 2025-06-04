@@ -13,7 +13,7 @@
 | `@Positive`                               | Nilai harus positif (> 0)                  | `@Positive private int amount;`           |
 | `@Negative`                               | Nilai harus negatif (< 0)                  | `@Negative private int temperature;`      |
 
-#Spring framework core
+# Spring framework core
 
 | Anotasi            | Fungsi                                                |
 | ------------------ | ----------------------------------------------------- |
