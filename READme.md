@@ -83,3 +83,13 @@
 | `@AfterEach`      | Dieksekusi setelah setiap test method           |
 | `@Test`           | Menandai method sebagai test                    |
 
+# Anotasi Lombok
+| Anotasi               | Fungsi                            |
+| --------------------- | --------------------------------- |
+| `@Slf4j`              | Otomatis menyediakan logger       |
+| `@Builder`            | Buat object dengan gaya builder   |
+| `@AllArgsConstructor` | Generate constructor semua field  |
+| `@NoArgsConstructor`  | Constructor kosong                |
+| `@Getter`, `@Setter`  | Generate getter & setter otomatis |
+
+
